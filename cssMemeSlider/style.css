@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 .slider {
     margin-left: auto;
     margin-right: auto;
     position: static;
     width: 1000px;
-    height: 800px;
+    height: 700px;
     overflow: hidden;
 }
 .slides {
@@ -20,18 +21,17 @@ display: flex;
 flex-direction: column;
 }
 .div_btn
-{   margin-top: 10px;
-    width: 200px;
+{   
+    width: 160px;
     height: auto;
     position: static;
-    margin-left: auto;
-    margin-right: auto;
     display: flex;
     flex-direction: row;
     
 }
 body
 {
+    background-color:rgb(17, 17, 17);
     margin: 0;
     height: 100vh;
     display: flex;
@@ -42,7 +42,7 @@ body
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: blue;
+    background-color: rgb(59, 59, 199);
     margin: 10px;
     cursor: pointer;
     transition: background-color 0.3s, border 0.3s;
@@ -54,5 +54,25 @@ body
 
 .button.active {
     background-color: transparent;
-    border: 2px solid blue;
+    border: 2px solid rgb(59, 59, 199);
+}
+.sub
+{  
+    color: white; /* Цвет текста белый */
+    font-family: 'Montserrat', sans-serif; /* Используем шрифт Montserrat */
+}
+.bottom
+{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.sub.active
+{
+    display: block;
+}
+.disabled
+{
+    display: none;
 }
