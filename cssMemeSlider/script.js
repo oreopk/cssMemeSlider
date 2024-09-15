@@ -21,6 +21,7 @@ subs[0].classList.add('disabled');
   btns.forEach((btn,index) => {
     btn.addEventListener('click',  () => showSlide(index,btn));
 });
+showSlide(0,btns[0]);
 });
 function Active(btn1)
 {

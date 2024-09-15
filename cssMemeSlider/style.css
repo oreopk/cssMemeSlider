@@ -58,8 +58,8 @@ body
 }
 .sub
 {  
-    color: white; /* Цвет текста белый */
-    font-family: 'Montserrat', sans-serif; /* Используем шрифт Montserrat */
+    color: white; 
+    font-family: 'Montserrat', sans-serif; 
 }
 .bottom
 {
