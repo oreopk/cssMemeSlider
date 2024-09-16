@@ -1,33 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-.slider {
-    margin-left: auto;
-    margin-right: auto;
-    position: static;
-    width: 1000px;
-    height: 700px;
-    overflow: hidden;
-}
-.slides {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-.slide {
-    min-width: 100%;
-    height: 100%;
-}
-.container
-{
-display: flex;
-flex-direction: column;
-}
-.div_btn
-{   
-    width: 160px;
-    height: auto;
-    position: static;
-    display: flex;
-    flex-direction: row;
-    
+* {
+    box-sizing: border-box;
 }
 body
 {
@@ -38,41 +11,107 @@ body
     justify-content: center;
     align-items:center;
 }
-.button {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: rgb(59, 59, 199);
-    margin: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s, border 0.3s;
+
+.slider {
+    position: fixed;
+    width: 30vw;
+display: flex;
+flex-direction: column;
+    overflow: hidden;
+   
 }
 
-.button:hover {
-    background-color: white;
+label {
+    display: block; /* Блочный элемент */
+    min-width:   1vh; /* Минимальная ширина */
+    min-height:  1vh; /* Минимальная высота */
+    width:   1vh; /* Фиксированная ширина */
+    height:  1vh; /* Фиксированная высота */
+    background-color: rgb(25, 85, 138); /* Цвет фона */
+    border-radius: 1vw; /* Закругленные углы */
+    text-align: center; /* Центрирование текста */
+    cursor: pointer; /* Указатель при наведении */
+    margin: 5px; /* Отступы между элементами */
+    transition: background-color 0.3s; /* Плавный переход цвета фона */
 }
 
-.button.active {
-    background-color: transparent;
-    border: 2px solid rgb(59, 59, 199);
+label:hover {
+    background-color: rgb(0, 0, 0); /* Цвет фона при наведении */
+    border: 0.01vw solid white; 
 }
+input#slide1:checked + label,
+input#slide2:checked + label,
+input#slide3:checked + label,
+input#slide4:checked + label {
+    background-color: rgb(255, 255, 255); /* Цвет фона при выборе */
+    border: 0.01vw solid white; 
+}
+/* Для нижних слайдов */
+#slide1, #slide2, #slide3, #slide4 {
+    display: none; /* Скрываем все слайды по умолчанию */
+}
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+  
+}
+
+.slide {
+    width: 100%; /* Каждый слайд занимает 100% ширины контейнера */
+    height: 40vh;
+    flex-shrink: 0; /* Запрещаем сжимать слайды */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+}
+.navigation
+{
+    display:flex;
+align-self: end;
+margin-top: 10px;
+}
+
+
 .sub
 {  
     color: white; 
     font-family: 'Montserrat', sans-serif; 
 }
-.bottom
-{
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+
+
+input[type="radio"] {
+    display: none; 
 }
-.sub.active
-{
-    display: block;
+
+/* Показать слайд в зависимости от выбранной радиокнопки */
+#slide1:checked ~ .slides {
+    transform: translateX(0);
 }
-.disabled
-{
-    display: none;
+
+#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+#slide4:checked ~ .slides {
+    transform: translateX(-300%);
+}
+.nav {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.radiobtn {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px;
 }
